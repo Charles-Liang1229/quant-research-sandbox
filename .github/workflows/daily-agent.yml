@@ -1,0 +1,47 @@
+name: Daily Trading Agent
+
+on:
+  schedule:
+    # UTC 06:00 = 悉尼 16:00 (AEST冬令时)，只在周一到周五跑
+    # 注：GitHub的定时不保证准点，可能延迟几分钟到半小时——对本agent无影响
+    - cron: "0 6 * * 1-5"
+  workflow_dispatch: {}   # 允许在网页上手动点按钮触发（测试用）
+
+permissions:
+  contents: write   # 允许把决策日志提交回仓库
+
+jobs:
+  run-agent:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: 拉取代码
+        uses: actions/checkout@v4
+
+      - name: 安装Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 运行Agent决策循环
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python trading_agent.py
+
+      - name: 显示当前持仓
+        env:
+          ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
+          ALPACA_SECRET_KEY: ${{ secrets.ALPACA_SECRET_KEY }}
+        run: python trading_agent.py status
+
+      - name: 把决策日志提交回仓库（形成公开的业绩档案）
+        run: |
+          git config user.name "trading-agent-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add -f decisions_log.csv
+          git diff --cached --quiet || git commit -m "log: agent decisions $(date -u +%Y-%m-%d)"
+          git push
