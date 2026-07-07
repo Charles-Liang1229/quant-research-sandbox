@@ -34,3 +34,10 @@ timestamp,action,symbol,reason,detail
 2026-07-06T17:18:13.212916+00:00,SKIP(day-cap),GOOGL,score=+55,tech=+27 fund=+73 price=$364.28
 2026-07-06T17:18:13.213003+00:00,SKIP(day-cap),JPM,score=+46,tech=+55 fund=+41 price=$336.18
 2026-07-06T17:18:13.213078+00:00,SKIP(day-cap),AMZN,score=+41,tech=+27 fund=+50 price=$245.18
+2026-07-07T13:55:35.957035+00:00,HOLD,AAPL,score=+60 pnl=+0.7%,tech=+55 fund=+64 price=$311.26
+2026-07-07T13:55:36.773513+00:00,HOLD,META,score=+58 pnl=+1.1%,tech=+36 fund=+73 price=$611.36
+2026-07-07T13:55:37.649176+00:00,HOLD,MSFT,score=+55 pnl=+2.3%,tech=+27 fund=+73 price=$393.70
+2026-07-07T13:55:38.532492+00:00,HOLD,V,score=+60 pnl=-0.4%,tech=+55 fund=+64 price=$354.16
+2026-07-07T13:55:44.271976+00:00,BUY,GOOGL,"score=+58 size=$10,037",tech=+36 fund=+73 price=$372.83
+2026-07-07T13:55:44.333698+00:00,BUY,JPM,"score=+46 size=$10,037",tech=+55 fund=+41 price=$341.06
+2026-07-07T13:55:44.333787+00:00,SKIP(day-cap),AMZN,score=+41,tech=+27 fund=+50 price=$248.62
