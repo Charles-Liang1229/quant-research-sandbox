@@ -30,14 +30,17 @@
 import os
 import sys
 import csv
+import json
 import warnings
-from datetime import datetime, timezone
+from datetime import datetime, timezone, date
 
 warnings.filterwarnings("ignore")
 
 from alpaca.trading.client import TradingClient
-from alpaca.trading.requests import MarketOrderRequest, GetOrdersRequest
-from alpaca.trading.enums import OrderSide, TimeInForce, QueryOrderStatus
+from alpaca.trading.requests import MarketOrderRequest, GetOrdersRequest, GetAssetsRequest
+from alpaca.trading.enums import OrderSide, TimeInForce, QueryOrderStatus, AssetClass, AssetStatus
+from alpaca.data.historical import StockHistoricalDataClient
+from alpaca.data.requests import StockSnapshotRequest
 
 # 复用双分析师的打分逻辑（同目录的 analyst_v2.py）
 from analyst_v2 import (fetch_all, t_trend, t_rsi, t_macd, t_volume,
@@ -47,8 +50,14 @@ from analyst_v2 import (fetch_all, t_trend, t_rsi, t_macd, t_volume,
 # 配置（观察列表和阈值可调；风控规则不建议放松）
 # ─────────────────────────────────────────────
 
-WATCHLIST = ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN",
-             "META", "JPM", "V", "XOM", "WMT"]
+# 股池三层降级：AI主题股池（首选，见①a）→ 全市场成交额前N（①b兜底）
+# → FALLBACK_WATCHLIST（最后保底），保证每日任务永不中断。
+UNIVERSE_SIZE      = 100    # 兜底筛选的股票数（打分一只约1-2秒，100只约3-5分钟）
+MIN_PRICE          = 5.0    # 低于$5的仙股不碰（流动性差、数据脏、操纵多）
+UNIVERSE_CACHE     = os.path.join(os.path.dirname(__file__), "universe_cache.json")
+
+FALLBACK_WATCHLIST = ["AAPL", "MSFT", "NVDA", "GOOGL", "AMZN",
+                      "META", "JPM", "V", "XOM", "WMT"]
 
 BUY_THRESHOLD  = 30     # 综合分 ≥ 30 才考虑买入
 SELL_THRESHOLD = 0      # 持仓股综合分 ≤ 0 → 卖出
@@ -70,6 +79,11 @@ LOG_FILE = os.path.join(os.path.dirname(__file__), "decisions_log.csv")
 
 def score_stock(symbol: str) -> tuple[float, str]:
     df, info = fetch_all(symbol)
+    # AI股池里可能混入行业ETF（XLV/SMH等）。本agent的基本面打分依赖
+    # PE/利润率/增长，ETF没有这些数据，硬算只会得到垃圾分 → 明确跳过。
+    quote_type = info.get("quoteType")
+    if quote_type not in (None, "EQUITY"):
+        raise ValueError(f"非个股({quote_type})，基本面打分不适用")
     tech_signals = [(t_trend, 2.0), (t_rsi, 1.0), (t_macd, 1.0), (t_volume, 1.5)]
     fund_signals = [(f_valuation, 1.5), (f_profitability, 1.5),
                     (f_growth, 1.5), (f_balance, 1.0)]
@@ -84,6 +98,131 @@ def score_stock(symbol: str) -> tuple[float, str]:
     combined = tech * W_TECH + fund * W_FUND
     price = df["close"].iloc[-1]
     return combined, f"tech={tech:+.0f} fund={fund:+.0f} price=${price:.2f}"
+
+
+# ─────────────────────────────────────────────
+# ①a 调研员：AI 主题股池（首选）
+# ─────────────────────────────────────────────
+# autotrader（deer-flow 仓库）每周由 Claude 采集新闻/宏观/政策后生成
+# universe.json：主题股池 + 回避清单。本 agent 优先使用同一股池——
+# 两个模拟盘由此构成对照实验：同一个股池，
+#   本 agent   = 技术+基本面综合打分（旧大脑）
+#   autotrader = 趋势+动量机械选股（新大脑）
+# 几周后对比成绩，用数据决定谁的选股逻辑留下。
+#
+# 查找顺序（第一个可用的生效）：
+#   1. 环境变量 UNIVERSE_FILE 指定的路径
+#   2. 本机 autotrader 的实时股池（本地运行时可用）
+#   3. 仓库内提交的快照 universe_ai.json（GitHub Actions 云端运行用）
+# 全部缺失或股池超过 21 天未更新 → 降级到全市场成交额筛选（①b）。
+
+AI_UNIVERSE_MAX_AGE_DAYS = 21
+AI_UNIVERSE_PATHS = [
+    os.environ.get("UNIVERSE_FILE", ""),
+    os.path.expanduser(
+        "~/Documents/GitHub/deer-flow/autotrader/research/universe.json"),
+    os.path.join(os.path.dirname(__file__), "universe_ai.json"),
+]
+
+
+def load_ai_universe() -> tuple[list[str] | None, str]:
+    """返回 (股池, 说明)；不可用时返回 (None, 原因)。"""
+    for path in AI_UNIVERSE_PATHS:
+        if not path or not os.path.exists(path):
+            continue
+        try:
+            with open(path) as f:
+                uni = json.load(f)
+            symbols = uni.get("all_tickers") or []
+            generated = date.fromisoformat(uni["generated_at"])
+        except (json.JSONDecodeError, KeyError, ValueError) as e:
+            print(f"   ⚠️ AI股池文件损坏 {os.path.basename(path)}: {e}")
+            continue
+        if not symbols:
+            continue
+        age = (date.today() - generated).days
+        if age > AI_UNIVERSE_MAX_AGE_DAYS:
+            return None, (f"AI股池已{age}天未更新(>{AI_UNIVERSE_MAX_AGE_DAYS}天上限) "
+                          f"@ {os.path.basename(path)}")
+        return symbols, (f"AI主题股池 {uni['generated_at']}（{age}天前生成，"
+                         f"{len(symbols)}只）@ {os.path.basename(path)}")
+    return None, "未找到可用的AI股池文件"
+
+
+def get_watchlist(trading_client: TradingClient) -> list[str]:
+    """分层取股池：AI 主题股池 → 全市场成交额筛选 → 固定列表。"""
+    symbols, note = load_ai_universe()
+    if symbols:
+        print(f"   ✅ {note}")
+        log_decision("UNIVERSE", "-", "ai-thematic", note)
+        return symbols
+    print(f"   ⚠️ {note} → 降级：全市场成交额筛选")
+    log_decision("UNIVERSE", "-", "volume-fallback", note)
+    return build_universe(trading_client)
+
+
+# ─────────────────────────────────────────────
+# ①b 调研员：全市场动态选股（AI股池不可用时的兜底）
+# ─────────────────────────────────────────────
+
+def build_universe(trading_client: TradingClient) -> list[str]:
+    """从全市场可交易美股中按成交额筛出前 UNIVERSE_SIZE 只。
+
+    两段式：先拉全部活跃资产（~1万只），再用行情快照按
+    当日成交额（价格×成交量）排序取头部。结果按日缓存。
+    """
+    # 当天已经筛过就直接用缓存（launchd重跑/手动重跑不重复扫描）
+    if os.path.exists(UNIVERSE_CACHE):
+        try:
+            with open(UNIVERSE_CACHE) as f:
+                cached = json.load(f)
+            if cached.get("date") == date.today().isoformat() and cached.get("symbols"):
+                print(f"   （使用今日缓存的股池，{len(cached['symbols'])}只）")
+                return cached["symbols"]
+        except (json.JSONDecodeError, KeyError):
+            pass
+
+    print("   拉取全市场资产列表 ...")
+    assets = trading_client.get_all_assets(GetAssetsRequest(
+        status=AssetStatus.ACTIVE, asset_class=AssetClass.US_EQUITY))
+    # 排除ETF/基金：打分逻辑依赖个股基本面（PE/利润率/增长），
+    # ETF没有这些数据，只会白占股池名额。Alpaca无ETF标志位，按名称关键词过滤。
+    ETF_WORDS = ("ETF", "ETN", "FUND", "TRUST", "SHARES", "INDEX", "BULL", "BEAR")
+    symbols = [a.symbol for a in assets
+               if a.tradable and a.fractionable
+               and a.symbol.isalpha() and len(a.symbol) <= 5
+               and not any(w in (a.name or "").upper() for w in ETF_WORDS)]
+    print(f"   可交易+支持碎股的普通股（已排除ETF）：{len(symbols)}只，按成交额排序中 ...")
+
+    data_client = StockHistoricalDataClient(
+        os.environ["ALPACA_API_KEY"], os.environ["ALPACA_SECRET_KEY"])
+    ranked = []
+    CHUNK = 500
+    for i in range(0, len(symbols), CHUNK):
+        chunk = symbols[i:i + CHUNK]
+        try:
+            snaps = data_client.get_stock_snapshot(StockSnapshotRequest(symbol_or_symbols=chunk))
+        except Exception as e:
+            print(f"   ⚠️ 快照批次 {i//CHUNK + 1} 失败: {e}")
+            continue
+        for sym, snap in snaps.items():
+            bar = snap.daily_bar or snap.previous_daily_bar
+            if bar is None or bar.close is None or bar.volume is None:
+                continue
+            if bar.close < MIN_PRICE:
+                continue
+            ranked.append((bar.close * bar.volume, sym))
+
+    if len(ranked) < UNIVERSE_SIZE:
+        print(f"   ⚠️ 有效快照仅{len(ranked)}只，不足以筛选 → 回退到固定观察列表")
+        return FALLBACK_WATCHLIST
+
+    ranked.sort(reverse=True)
+    universe = [sym for _, sym in ranked[:UNIVERSE_SIZE]]
+    with open(UNIVERSE_CACHE, "w") as f:
+        json.dump({"date": date.today().isoformat(), "symbols": universe}, f)
+    print(f"   ✅ 今日股池：全市场成交额前{UNIVERSE_SIZE}只（已缓存）")
+    return universe
 
 
 # ─────────────────────────────────────────────
@@ -142,7 +281,13 @@ def run_cycle():
             log_decision("SELL(stop)", sym, f"止损:{pnl_pct:.1%}", f"entry={entry} now={now}")
             continue
 
-        score, detail = score_stock(sym)
+        try:
+            score, detail = score_stock(sym)
+        except Exception as e:
+            # 数据抖动时宁可按兵不动，也不能因打分失败误卖持仓
+            print(f"   ⚠️ {sym} 打分失败（{e}），本轮按持有处理")
+            log_decision("HOLD(data-error)", sym, str(e)[:100], "")
+            continue
         if score <= SELL_THRESHOLD:
             print(f"   📉 {sym} 综合分{score:+.0f} ≤ {SELL_THRESHOLD} → 信号退出，卖出")
             client.submit_order(MarketOrderRequest(
@@ -152,11 +297,13 @@ def run_cycle():
             print(f"   ✅ {sym} 综合分{score:+.0f}，盈亏{pnl_pct:+.1%}，继续持有")
             log_decision("HOLD", sym, f"score={score:+.0f} pnl={pnl_pct:+.1%}", detail)
 
-    # ── 第二步：扫描观察列表找买入机会 ──
-    print("\n② 扫描观察列表 ...")
+    # ── 第二步：构建股池（AI主题股池优先） + 扫描找买入机会 ──
+    print("\n② 构建今日股池 ...")
+    watchlist = get_watchlist(client)
+    print(f"\n   扫描 {len(watchlist)} 只股票 ...")
     todays_buys = count_today_buys(client)
     candidates = []
-    for sym in WATCHLIST:
+    for sym in watchlist:
         if sym in positions:
             continue
         try:
@@ -220,5 +367,11 @@ def show_status():
 if __name__ == "__main__":
     if len(sys.argv) > 1 and sys.argv[1] == "status":
         show_status()
+    elif len(sys.argv) > 1 and sys.argv[1] == "universe":
+        # 只打印今日实际会使用的股池，不打分不交易（用于验证）
+        syms = get_watchlist(get_client())
+        print(f"\n今日股池（{len(syms)}只）：")
+        for i in range(0, len(syms), 10):
+            print("  " + " ".join(f"{s:<6}" for s in syms[i:i+10]))
     else:
         run_cycle()

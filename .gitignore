@@ -3,3 +3,4 @@ __pycache__/
 .DS_Store
 decisions_log.csv
 agent_daily.log
+universe_cache.json

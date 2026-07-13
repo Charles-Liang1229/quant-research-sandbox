@@ -1,0 +1,126 @@
+{
+  "market_regime": "Risk assets are consolidating after a strong 3-month run, with clear rotation out of high-multiple Technology (-8.8% 1m despite +26.6% 3m) and Communication Services into defensives and value: Health Care, Financials, Industrials and Utilities lead on a 1-month basis. The macro backdrop is a firmer dollar and rising 10Y yield (4.49%) under a hawkish Fed (Warsh/Hammack flagging inflation and possible hikes), while oil has collapsed ~29% in a month and gold has rolled over. Headlines warn of 'extreme speculation' even as the AI/data-center capex cycle remains the dominant structural driver.",
+  "themes": [
+    {
+      "name": "AI infrastructure & semiconductors",
+      "thesis": "Multiple headlines confirm an accelerating, multi-year AI capex cycle (Big Tech pouring 'trillions', data-center capacity forecast to surge from 2.3GW to 150GW by 2030, Nvidia citing $3-4T capex by 2030). This is a durable structural driver even though Technology just pulled back ~9% on the month, giving the trend layer a chance to re-enter on stabilization.",
+      "confidence": "high",
+      "tickers": [
+        "NVDA",
+        "AVGO",
+        "AMD",
+        "MRVL",
+        "ANET",
+        "MU",
+        "VRT",
+        "SMH"
+      ]
+    },
+    {
+      "name": "Power, grid & electrification for data centers",
+      "thesis": "Congressional committees are advancing data-center and grid bills, and AI workloads are driving surging electricity demand. Utilities (+4.9% 1m) and power/grid equipment names are leading rotation as investors seek the 'picks-and-shovels' of the AI power buildout, a slower-moving and more defensive expression of the capex theme.",
+      "confidence": "high",
+      "tickers": [
+        "VST",
+        "CEG",
+        "NRG",
+        "GEV",
+        "ETN",
+        "PWR",
+        "XLU"
+      ]
+    },
+    {
+      "name": "Health Care defensive leadership",
+      "thesis": "Health Care is the strongest sector on a 1-month basis (+12.3%) and positive over 3 months, reflecting a rotation into defensives amid extreme speculation warnings and a hawkish Fed. Durable earnings and low cyclicality make this a natural momentum hunting ground if the tech-led melt-up stalls.",
+      "confidence": "medium",
+      "tickers": [
+        "LLY",
+        "UNH",
+        "ISRG",
+        "TMO",
+        "ABBV",
+        "JNJ",
+        "XLV"
+      ]
+    },
+    {
+      "name": "Financials on rotation and higher-for-longer rates",
+      "thesis": "Financials lead alongside Health Care (+8.5% 1m, +6.4% 3m) as a rising 10Y yield and a firmer dollar under a Fed that may keep rates elevated support net interest margins and capital-markets activity. This is a rate-and-rotation beneficiary rather than a news-driven trade.",
+      "confidence": "medium",
+      "tickers": [
+        "JPM",
+        "GS",
+        "MS",
+        "BAC",
+        "WFC",
+        "KKR",
+        "XLF"
+      ]
+    },
+    {
+      "name": "Industrial automation & robotics",
+      "thesis": "Industrials are firmly in the leadership group (+5.8% 1m) and multiple headlines highlight accelerating humanoid/industrial robotics adoption (BMW deploying Figure AI, surging investor capital) alongside domestic semiconductor factory buildouts. Automation capex is a real, if earlier-stage, tailwind; robotics specifically remains hype-heavy, so confidence is moderate.",
+      "confidence": "medium",
+      "tickers": [
+        "ROK"
+      ]
+    }
+  ],
+  "avoid": [
+    {
+      "what": "Energy / oil-levered producers (XLE, oil E&Ps)",
+      "reason": "WTI crude fell ~29% in a month and Energy is the weakest sector (-7.5% 1m); collapsing oil removes the earnings and momentum support for the sector."
+    },
+    {
+      "what": "Gold and precious-metals miners",
+      "reason": "Gold is down 6% on the month and ~18% over 3 months amid a rising dollar and rising real yields, an unfavorable backdrop for the trend."
+    },
+    {
+      "what": "Communication Services",
+      "reason": "Weakest major sector alongside tech (-3.2% 1m, -5.6% 3m); caught in the rotation out of high-multiple growth."
+    },
+    {
+      "what": "Speculative long-duration mega-cap tech at extremes",
+      "reason": "Headlines flag 'extreme' speculation and Fed officials warn AI could fuel inflation and rate hikes; a hawkish Fed and rising 10Y compress rich multiples, so avoid chasing crowded names until the trend layer confirms re-acceleration."
+    }
+  ],
+  "all_tickers": [
+    "ABBV",
+    "AMD",
+    "ANET",
+    "AVGO",
+    "BAC",
+    "CEG",
+    "ETN",
+    "GEV",
+    "GS",
+    "ISRG",
+    "JNJ",
+    "JPM",
+    "KKR",
+    "LLY",
+    "MRVL",
+    "MS",
+    "MU",
+    "NRG",
+    "NVDA",
+    "PWR",
+    "ROK",
+    "SMH",
+    "TMO",
+    "UNH",
+    "VRT",
+    "VST",
+    "WFC",
+    "XLF",
+    "XLU",
+    "XLV"
+  ],
+  "generated_at": "2026-07-06",
+  "model": "claude-opus-4-8",
+  "usage": {
+    "input_tokens": 4856,
+    "output_tokens": 2425
+  }
+}

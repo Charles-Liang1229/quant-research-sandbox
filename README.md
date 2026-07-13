@@ -85,3 +85,23 @@ No signal shows positive predictive power. The only significant cells are **nega
 ---
 
 *Built as a learning project — the goal was never a trading edge, but the research muscle: hypothesize → test → dissect → let the data overrule you.*
+
+---
+
+## v4：AI 主题股池（与 autotrader 的对照实验）
+
+Agent 的观察列表不再是硬编码的 10 只大盘股。股池按三层降级取用：
+
+1. **AI 主题股池**（首选）：deer-flow 仓库的 autotrader 每周采集新闻/宏观/
+   国会政策/行业轮动后由 Claude 生成 `universe.json`（约 30 只，含回避清单）。
+   本地运行直接读取；云端 GitHub Actions 使用仓库内快照 `universe_ai.json`。
+2. **全市场成交额筛选**（兜底）：AI 股池缺失或超过 21 天未更新时，
+   从 Alpaca 全部可交易美股按当日成交额取前 100。
+3. **固定列表**（保底）：以上都失败时用原 10 只。
+
+这构成一个对照实验：**同一个股池**，本 agent 用"技术+基本面综合打分"
+（回测已证明无预测优势的旧大脑），autotrader 用"趋势+动量"机械规则。
+几周模拟盘成绩对比后，用数据决定谁的选股逻辑留下。
+
+其他改动：打分器明确跳过 ETF（基本面字段不适用）；持仓打分失败时按
+持有处理而非误卖；每日决策日志记录当天使用的股池来源。
