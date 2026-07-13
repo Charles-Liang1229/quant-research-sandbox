@@ -67,3 +67,12 @@ timestamp,action,symbol,reason,detail
 2026-07-10T13:23:06.778631+00:00,HOLD,NVDA,score=+63 pnl=+0.1%,tech=+27 fund=+86 price=$202.78
 2026-07-10T13:23:07.191426+00:00,HOLD,V,score=+60 pnl=-1.6%,tech=+55 fund=+64 price=$348.20
 2026-07-10T13:23:07.749671+00:00,HOLD,XOM,score=+5 pnl=-3.3%,tech=-36 fund=+32 price=$137.46
+2026-07-13T13:40:48.992049+00:00,HOLD,AAPL,score=+60 pnl=+3.9%,tech=+55 fund=+64 price=$321.19
+2026-07-13T13:40:49.466317+00:00,HOLD,AMZN,score=+41 pnl=+2.2%,tech=+27 fund=+50 price=$248.26
+2026-07-13T13:40:49.840308+00:00,HOLD,GOOGL,score=+33 pnl=-4.4%,tech=-27 fund=+73 price=$356.53
+2026-07-13T13:40:50.344978+00:00,HOLD,JPM,score=+39 pnl=-1.6%,tech=+36 fund=+41 price=$335.88
+2026-07-13T13:40:50.786294+00:00,HOLD,META,score=+58 pnl=+11.5%,tech=+36 fund=+73 price=$674.10
+2026-07-13T13:40:51.421100+00:00,HOLD,MSFT,score=+55 pnl=+1.0%,tech=+27 fund=+73 price=$388.89
+2026-07-13T13:40:51.889223+00:00,HOLD,NVDA,score=+63 pnl=+3.3%,tech=+27 fund=+86 price=$208.79
+2026-07-13T13:40:52.281770+00:00,HOLD,V,score=+60 pnl=-0.3%,tech=+55 fund=+64 price=$354.50
+2026-07-13T13:40:52.843439+00:00,HOLD,XOM,score=+30 pnl=+0.2%,tech=+27 fund=+32 price=$142.93
