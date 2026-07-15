@@ -102,3 +102,23 @@ timestamp,action,symbol,reason,detail
 2026-07-14T11:13:00.576526+00:00,SKIP(exposure),GEV,score=+33,tech=-27 fund=+73 price=$1042.60
 2026-07-14T11:13:00.576567+00:00,SKIP(exposure),ISRG,score=+32,tech=-36 fund=+77 price=$407.12
 2026-07-14T11:13:00.576604+00:00,SKIP(exposure),CEG,score=+30,tech=+27 fund=+32 price=$257.57
+2026-07-15T11:17:16.287776+00:00,HOLD,AAPL,score=+38 pnl=+2.6%,tech=+0 fund=+64 price=$nan
+2026-07-15T11:17:17.248231+00:00,HOLD,AMZN,score=+26 pnl=+2.3%,tech=-9 fund=+50 price=$nan
+2026-07-15T11:17:17.676902+00:00,HOLD,GOOGL,score=+36 pnl=-4.1%,tech=-18 fund=+73 price=$nan
+2026-07-15T11:17:18.249869+00:00,HOLD,JPM,score=+25 pnl=+0.7%,tech=-18 fund=+55 price=$nan
+2026-07-15T11:17:18.586183+00:00,HOLD,META,score=+58 pnl=+9.6%,tech=+36 fund=+73 price=$661.04
+2026-07-15T11:17:19.082862+00:00,HOLD,MSFT,score=+40 pnl=+0.2%,tech=-9 fund=+73 price=$nan
+2026-07-15T11:17:19.475454+00:00,HOLD,NVDA,score=+48 pnl=+4.8%,tech=-9 fund=+86 price=$nan
+2026-07-15T11:17:19.982353+00:00,HOLD,V,score=+38 pnl=+0.0%,tech=+0 fund=+64 price=$nan
+2026-07-15T11:17:20.669240+00:00,HOLD,XOM,score=+15 pnl=+1.6%,tech=-9 fund=+32 price=$nan
+2026-07-15T11:17:20.669448+00:00,UNIVERSE,-,ai-thematic,AI主题股池 2026-07-06（9天前生成，30只）@ universe_ai.json
+2026-07-15T11:17:36.638735+00:00,SKIP(exposure),ANET,score=+68,tech=+55 fund=+77 price=$182.57
+2026-07-15T11:17:36.638825+00:00,SKIP(exposure),AVGO,score=+43,tech=-9 fund=+77 price=$nan
+2026-07-15T11:17:36.638864+00:00,SKIP(exposure),MU,score=+41,tech=-27 fund=+86 price=$nan
+2026-07-15T11:17:36.638898+00:00,SKIP(exposure),LLY,score=+39,tech=-18 fund=+77 price=$nan
+2026-07-15T11:17:36.638930+00:00,SKIP(exposure),ISRG,score=+39,tech=-18 fund=+77 price=$nan
+2026-07-15T11:17:36.638962+00:00,SKIP(exposure),JNJ,score=+38,tech=+0 fund=+64 price=$nan
+2026-07-15T11:17:36.638993+00:00,SKIP(exposure),MRVL,score=+37,tech=-36 fund=+86 price=$nan
+2026-07-15T11:17:36.639023+00:00,SKIP(exposure),ABBV,score=+36,tech=+36 fund=+36 price=$244.78
+2026-07-15T11:17:36.639055+00:00,SKIP(exposure),GEV,score=+33,tech=-27 fund=+73 price=$1066.01
+2026-07-15T11:17:36.639106+00:00,SKIP(exposure),TMO,score=+30,tech=+0 fund=+50 price=$nan
