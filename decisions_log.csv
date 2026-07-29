@@ -359,3 +359,38 @@ timestamp,action,symbol,reason,detail
 2026-07-28T08:15:39.865554+00:00,SKIP(exposure),LITE,score=+32,tech=-36 fund=+77 price=$711.96
 2026-07-28T08:15:39.865610+00:00,SKIP(exposure),VZ,score=+31,tech=+36 fund=+27 price=$47.32
 2026-07-28T08:15:39.865662+00:00,SKIP(exposure),ABT,score=+31,tech=+36 fund=+27 price=$104.49
+2026-07-29T08:19:50.458274+00:00,HOLD,AAPL,score=+30 pnl=+10.6%,tech=+0 fund=+50 price=$nan
+2026-07-29T08:19:50.706408+00:00,HOLD,AMZN,score=+15 pnl=-4.8%,tech=-36 fund=+50 price=$nan
+2026-07-29T08:19:51.085767+00:00,HOLD,JPM,score=+25 pnl=+4.9%,tech=-18 fund=+55 price=$nan
+2026-07-29T08:19:51.360994+00:00,HOLD,META,score=+29 pnl=-1.2%,tech=-36 fund=+73 price=$nan
+2026-07-29T08:19:51.686830+00:00,HOLD,MSFT,score=+40 pnl=+3.1%,tech=-9 fund=+73 price=$nan
+2026-07-29T08:19:51.980800+00:00,HOLD,NVDA,score=+37 pnl=-2.9%,tech=-36 fund=+86 price=$nan
+2026-07-29T08:19:52.300572+00:00,HOLD,V,score=+31 pnl=+2.9%,tech=-18 fund=+64 price=$nan
+2026-07-29T08:19:52.752639+00:00,HOLD,XOM,score=+19 pnl=+8.6%,tech=+0 fund=+32 price=$nan
+2026-07-29T08:19:52.752838+00:00,UNIVERSE,-,volume-fallback,AI股池已23天未更新(>21天上限) @ universe_ai.json
+2026-07-29T08:20:27.963707+00:00,SKIP(exposure),MPWR,score=+48,tech=-9 fund=+86 price=$nan
+2026-07-29T08:20:27.963787+00:00,SKIP(exposure),INTU,score=+44,tech=+0 fund=+73 price=$nan
+2026-07-29T08:20:27.963834+00:00,SKIP(exposure),AVGO,score=+43,tech=-9 fund=+77 price=$nan
+2026-07-29T08:20:27.963882+00:00,SKIP(exposure),PLTR,score=+41,tech=-27 fund=+86 price=$nan
+2026-07-29T08:20:27.963926+00:00,SKIP(exposure),MU,score=+41,tech=-27 fund=+86 price=$nan
+2026-07-29T08:20:27.963966+00:00,SKIP(exposure),LLY,score=+39,tech=-18 fund=+77 price=$nan
+2026-07-29T08:20:27.964004+00:00,SKIP(exposure),LITE,score=+39,tech=-18 fund=+77 price=$nan
+2026-07-29T08:20:27.964042+00:00,SKIP(exposure),JNJ,score=+38,tech=+0 fund=+64 price=$nan
+2026-07-29T08:20:27.964106+00:00,SKIP(exposure),CRM,score=+38,tech=+0 fund=+64 price=$nan
+2026-07-29T08:20:27.964149+00:00,SKIP(exposure),BLK,score=+38,tech=+0 fund=+64 price=$nan
+2026-07-29T08:20:27.964188+00:00,SKIP(exposure),ADBE,score=+38,tech=+0 fund=+64 price=$nan
+2026-07-29T08:20:27.964225+00:00,SKIP(exposure),TSM,score=+37,tech=-36 fund=+86 price=$nan
+2026-07-29T08:20:27.964262+00:00,SKIP(exposure),TER,score=+37,tech=-36 fund=+86 price=$nan
+2026-07-29T08:20:27.964299+00:00,SKIP(exposure),SNDK,score=+37,tech=-36 fund=+86 price=$nan
+2026-07-29T08:20:27.964336+00:00,SKIP(exposure),MRVL,score=+37,tech=-36 fund=+86 price=$nan
+2026-07-29T08:20:27.964387+00:00,SKIP(exposure),LRCX,score=+37,tech=-36 fund=+86 price=$nan
+2026-07-29T08:20:27.964425+00:00,SKIP(exposure),CDNS,score=+37,tech=-36 fund=+86 price=$nan
+2026-07-29T08:20:27.964462+00:00,SKIP(exposure),STRL,score=+36,tech=-18 fund=+73 price=$nan
+2026-07-29T08:20:27.964499+00:00,SKIP(exposure),SPOT,score=+35,tech=+0 fund=+59 price=$nan
+2026-07-29T08:20:27.964535+00:00,SKIP(exposure),ANET,score=+35,tech=-27 fund=+77 price=$nan
+2026-07-29T08:20:27.964571+00:00,SKIP(exposure),ACN,score=+35,tech=+0 fund=+59 price=$nan
+2026-07-29T08:20:27.964608+00:00,SKIP(exposure),BSX,score=+32,tech=-9 fund=+59 price=$nan
+2026-07-29T08:20:27.964645+00:00,SKIP(exposure),TXN,score=+32,tech=-36 fund=+77 price=$nan
+2026-07-29T08:20:27.964681+00:00,SKIP(exposure),APH,score=+32,tech=-36 fund=+77 price=$nan
+2026-07-29T08:20:27.964717+00:00,SKIP(exposure),BKNG,score=+31,tech=-18 fund=+64 price=$nan
+2026-07-29T08:20:27.964753+00:00,SKIP(exposure),TMO,score=+30,tech=+0 fund=+50 price=$nan
