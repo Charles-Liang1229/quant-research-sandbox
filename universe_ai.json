@@ -1,126 +1,123 @@
 {
-  "market_regime": "Risk assets are consolidating after a strong 3-month run, with clear rotation out of high-multiple Technology (-8.8% 1m despite +26.6% 3m) and Communication Services into defensives and value: Health Care, Financials, Industrials and Utilities lead on a 1-month basis. The macro backdrop is a firmer dollar and rising 10Y yield (4.49%) under a hawkish Fed (Warsh/Hammack flagging inflation and possible hikes), while oil has collapsed ~29% in a month and gold has rolled over. Headlines warn of 'extreme speculation' even as the AI/data-center capex cycle remains the dominant structural driver.",
+  "market_regime": "Oil-driven inflation shock (WTI +27% 1m) amid Middle East conflict is pushing 10Y yields up and reviving Fed rate-hike odds, pressuring long-duration mega-cap tech (QQQ -3.7% 1m) even as the 3m AI-led uptrend stays intact. Leadership has rotated toward energy, financials, and health care while consumer discretionary and communication lag. VIX is subdued (~18.6), so this looks like a rotation/reflation regime rather than a broad risk-off event.",
   "themes": [
     {
-      "name": "AI infrastructure & semiconductors",
-      "thesis": "Multiple headlines confirm an accelerating, multi-year AI capex cycle (Big Tech pouring 'trillions', data-center capacity forecast to surge from 2.3GW to 150GW by 2030, Nvidia citing $3-4T capex by 2030). This is a durable structural driver even though Technology just pulled back ~9% on the month, giving the trend layer a chance to re-enter on stabilization.",
+      "name": "Energy & Oil Shock",
+      "thesis": "WTI is up 27% in one month and 20% over three, with Middle East conflict/oil-supply headlines and a World Bank growth-cut warning. Energy is the top sector (+11.3% 1m) and rising rate-hike odds are being explicitly tied to the oil spike, favoring integrated majors, E&Ps, and oilfield services with direct crude leverage.",
       "confidence": "high",
       "tickers": [
+        "XLE",
+        "XOM",
+        "CVX",
+        "COP",
+        "EOG",
+        "SLB",
+        "PSX",
+        "MPC"
+      ]
+    },
+    {
+      "name": "AI Data Center Power & Infrastructure",
+      "thesis": "OpenAI cloud spend reported at $750B and Alphabet raising AI capex to $205B confirm a durable buildout, with headlines steering money toward the 'picks and shovels' layer (power, cooling, electrical, fiber) rather than chips alone. Congress is advancing data-center energy bills, underscoring grid/power constraints that benefit electrical equipment and independent power producers.",
+      "confidence": "high",
+      "tickers": [
+        "VRT",
+        "ETN",
+        "GEV",
+        "PWR",
+        "EME",
+        "CEG",
+        "VST",
+        "CIEN"
+      ]
+    },
+    {
+      "name": "Semiconductors & US Reshoring",
+      "thesis": "Digest cites a semiconductor-led futures recovery, record short interest raising squeeze potential, and heavy state/federal reshoring investment (Texas, Oregon). AI infrastructure spend hit $89.7B with ARM passing x86, supporting compute, memory, and fab-equipment demand despite the near-term tech pullback.",
+      "confidence": "medium",
+      "tickers": [
+        "SMH",
         "NVDA",
         "AVGO",
         "AMD",
-        "MRVL",
-        "ANET",
         "MU",
-        "VRT",
-        "SMH"
+        "LRCX",
+        "AMAT",
+        "KLAC"
       ]
     },
     {
-      "name": "Power, grid & electrification for data centers",
-      "thesis": "Congressional committees are advancing data-center and grid bills, and AI workloads are driving surging electricity demand. Utilities (+4.9% 1m) and power/grid equipment names are leading rotation as investors seek the 'picks-and-shovels' of the AI power buildout, a slower-moving and more defensive expression of the capex theme.",
-      "confidence": "high",
-      "tickers": [
-        "VST",
-        "CEG",
-        "NRG",
-        "GEV",
-        "ETN",
-        "PWR",
-        "XLU"
-      ]
-    },
-    {
-      "name": "Health Care defensive leadership",
-      "thesis": "Health Care is the strongest sector on a 1-month basis (+12.3%) and positive over 3 months, reflecting a rotation into defensives amid extreme speculation warnings and a hawkish Fed. Durable earnings and low cyclicality make this a natural momentum hunting ground if the tech-led melt-up stalls.",
+      "name": "Financials on Higher-for-Longer Rates",
+      "thesis": "Rising 10Y yields (+15.4% 3m) and surging Fed rate-hike odds widen net interest margins, while financials are a persistent leader (+4.8% 1m, +10.9% 3m). Banks and capital-markets names benefit from a steeper curve and 'investors want a bigger reward for lending' dynamic in the digest.",
       "confidence": "medium",
       "tickers": [
-        "LLY",
-        "UNH",
-        "ISRG",
-        "TMO",
-        "ABBV",
-        "JNJ",
-        "XLV"
-      ]
-    },
-    {
-      "name": "Financials on rotation and higher-for-longer rates",
-      "thesis": "Financials lead alongside Health Care (+8.5% 1m, +6.4% 3m) as a rising 10Y yield and a firmer dollar under a Fed that may keep rates elevated support net interest margins and capital-markets activity. This is a rate-and-rotation beneficiary rather than a news-driven trade.",
-      "confidence": "medium",
-      "tickers": [
+        "XLF",
         "JPM",
         "GS",
         "MS",
         "BAC",
-        "WFC",
-        "KKR",
-        "XLF"
-      ]
-    },
-    {
-      "name": "Industrial automation & robotics",
-      "thesis": "Industrials are firmly in the leadership group (+5.8% 1m) and multiple headlines highlight accelerating humanoid/industrial robotics adoption (BMW deploying Figure AI, surging investor capital) alongside domestic semiconductor factory buildouts. Automation capex is a real, if earlier-stage, tailwind; robotics specifically remains hype-heavy, so confidence is moderate.",
-      "confidence": "medium",
-      "tickers": [
-        "ROK"
+        "WFC"
       ]
     }
   ],
   "avoid": [
     {
-      "what": "Energy / oil-levered producers (XLE, oil E&Ps)",
-      "reason": "WTI crude fell ~29% in a month and Energy is the weakest sector (-7.5% 1m); collapsing oil removes the earnings and momentum support for the sector."
+      "what": "Consumer Discretionary (autos, retail, homebuilders)",
+      "reason": "Weakest sector (-4.9% 1m, -4.0% 3m); rising rates, oil-driven inflation squeezing consumers, and hike odds are direct headwinds."
     },
     {
-      "what": "Gold and precious-metals miners",
-      "reason": "Gold is down 6% on the month and ~18% over 3 months amid a rising dollar and rising real yields, an unfavorable backdrop for the trend."
+      "what": "Long-duration/high-multiple mega-cap tech and communication services",
+      "reason": "QQQ -3.7% 1m and Communication -9.4% 3m; rising yields compress valuations and Reuters/CNBC flag AI capex pressuring Big Tech free cash flow and bond-market anxiety."
     },
     {
-      "what": "Communication Services",
-      "reason": "Weakest major sector alongside tech (-3.2% 1m, -5.6% 3m); caught in the rotation out of high-multiple growth."
+      "what": "Consumer Staples",
+      "reason": "Lagging (-0.4% 1m, -2.9% 3m) with margin pressure from higher input/energy costs and no rate tailwind in this reflation rotation."
     },
     {
-      "what": "Speculative long-duration mega-cap tech at extremes",
-      "reason": "Headlines flag 'extreme' speculation and Fed officials warn AI could fuel inflation and rate hikes; a hawkish Fed and rising 10Y compress rich multiples, so avoid chasing crowded names until the trend layer confirms re-acceleration."
+      "what": "Gold and rate-sensitive bond proxies",
+      "reason": "Gold is down 20% over 3m against rising real yields and a firmer dollar; the higher-for-longer backdrop is a structural headwind."
+    },
+    {
+      "what": "Pure-play humanoid robotics narratives",
+      "reason": "Strong secular headlines but few liquid US-listed pure plays and no confirming price momentum; thesis is early and speculative."
     }
   ],
   "all_tickers": [
-    "ABBV",
+    "AMAT",
     "AMD",
-    "ANET",
     "AVGO",
     "BAC",
     "CEG",
+    "CIEN",
+    "COP",
+    "CVX",
+    "EME",
+    "EOG",
     "ETN",
     "GEV",
     "GS",
-    "ISRG",
-    "JNJ",
     "JPM",
-    "KKR",
-    "LLY",
-    "MRVL",
+    "KLAC",
+    "LRCX",
+    "MPC",
     "MS",
     "MU",
-    "NRG",
     "NVDA",
+    "PSX",
     "PWR",
-    "ROK",
+    "SLB",
     "SMH",
-    "TMO",
-    "UNH",
     "VRT",
     "VST",
     "WFC",
+    "XLE",
     "XLF",
-    "XLU",
-    "XLV"
+    "XOM"
   ],
-  "generated_at": "2026-07-06",
+  "generated_at": "2026-07-26",
   "model": "claude-opus-4-8",
   "usage": {
-    "input_tokens": 4856,
-    "output_tokens": 2425
+    "input_tokens": 4798,
+    "output_tokens": 2304
   }
 }

@@ -26,6 +26,15 @@ jobs:
       - name: 安装依赖
         run: pip install -r requirements.txt
 
+      # checkout 只带来被 git 跟踪的文件；decisions_log.csv 在 .gitignore 里，
+      # 所以云端容器每次都是空日志 → 追加当天几行后覆盖掉仓库里的历史。
+      # 显式把仓库版本取出来做基底，业绩档案才能连续累积。
+      - name: 恢复历史决策日志
+        run: |
+          git show origin/main:decisions_log.csv > decisions_log.csv 2>/dev/null \
+            && echo "已恢复 $(wc -l < decisions_log.csv) 行历史" \
+            || echo "仓库中暂无历史日志，从空白开始"
+
       - name: 运行Agent决策循环
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}
@@ -43,5 +52,11 @@ jobs:
           git config user.name "trading-agent-bot"
           git config user.email "bot@users.noreply.github.com"
           git add -f decisions_log.csv
-          git diff --cached --quiet || git commit -m "log: agent decisions $(date -u +%Y-%m-%d)"
-          git push
+          git diff --cached --quiet && echo "无新决策，跳过提交" && exit 0
+          git commit -m "log: agent decisions $(date -u +%Y-%m-%d)"
+          # 别的运行可能刚推过；rebase 后重试，避免非快进被拒后静默丢日志
+          for i in 1 2 3; do
+            git pull --rebase --autostash origin main && git push && exit 0
+            echo "推送第 $i 次失败，重试…"; sleep 5
+          done
+          echo "::error::决策日志推送失败——业绩档案已断档"; exit 1
