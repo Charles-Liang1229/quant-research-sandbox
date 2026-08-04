@@ -529,3 +529,21 @@ timestamp,action,symbol,reason,detail
 2026-08-03T09:22:06.257423+00:00,SKIP(exposure),PSX,score=+33,tech=+55 fund=+18 price=$211.68
 2026-08-03T09:22:06.257455+00:00,SKIP(exposure),SLB,score=+30,tech=+27 fund=+32 price=$49.59
 2026-08-03T09:22:06.257487+00:00,SKIP(exposure),CEG,score=+30,tech=+27 fund=+32 price=$262.75
+2026-08-04T08:19:55.029205+00:00,HOLD,AAPL,score=+24 pnl=-1.8%,tech=-36 fund=+64 price=$nan
+2026-08-04T08:19:55.654708+00:00,HOLD,ADBE,score=+38 pnl=+2.0%,tech=+0 fund=+64 price=$nan
+2026-08-04T08:19:56.237683+00:00,HOLD,AMZN,score=+44 pnl=+15.1%,tech=+0 fund=+73 price=$nan
+2026-08-04T08:19:57.154145+00:00,HOLD,JPM,score=+25 pnl=+3.8%,tech=-18 fund=+55 price=$nan
+2026-08-04T08:19:57.814443+00:00,HOLD,MSFT,score=+36 pnl=+25.1%,tech=-18 fund=+73 price=$nan
+2026-08-04T08:19:58.476020+00:00,HOLD,NVDA,score=+41 pnl=+3.3%,tech=-27 fund=+86 price=$nan
+2026-08-04T08:19:59.147153+00:00,HOLD,V,score=+30 pnl=+2.9%,tech=+0 fund=+50 price=$nan
+2026-08-04T08:19:59.920641+00:00,HOLD,XOM,score=+35 pnl=+9.0%,tech=+0 fund=+59 price=$nan
+2026-08-04T08:19:59.920848+00:00,UNIVERSE,-,ai-thematic,AI主题股池 2026-07-26（9天前生成，30只）@ universe_ai.json
+2026-08-04T08:20:18.655317+00:00,SKIP(exposure),EOG,score=+52,tech=+0 fund=+86 price=$nan
+2026-08-04T08:20:18.655395+00:00,SKIP(exposure),AVGO,score=+43,tech=-9 fund=+77 price=$nan
+2026-08-04T08:20:18.655433+00:00,SKIP(exposure),MU,score=+37,tech=-36 fund=+86 price=$nan
+2026-08-04T08:20:18.655464+00:00,SKIP(exposure),LRCX,score=+37,tech=-36 fund=+86 price=$nan
+2026-08-04T08:20:18.655494+00:00,SKIP(exposure),PWR,score=+35,tech=-9 fund=+64 price=$nan
+2026-08-04T08:20:18.655523+00:00,SKIP(exposure),GEV,score=+33,tech=-27 fund=+73 price=$nan
+2026-08-04T08:20:18.655552+00:00,SKIP(exposure),AMAT,score=+33,tech=-27 fund=+73 price=$nan
+2026-08-04T08:20:18.655581+00:00,SKIP(exposure),EME,score=+32,tech=-9 fund=+59 price=$nan
+2026-08-04T08:20:18.655610+00:00,SKIP(exposure),VRT,score=+32,tech=-36 fund=+77 price=$nan
