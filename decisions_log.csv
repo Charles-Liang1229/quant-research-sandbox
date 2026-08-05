@@ -547,3 +547,31 @@ timestamp,action,symbol,reason,detail
 2026-08-04T08:20:18.655552+00:00,SKIP(exposure),AMAT,score=+33,tech=-27 fund=+73 price=$nan
 2026-08-04T08:20:18.655581+00:00,SKIP(exposure),EME,score=+32,tech=-9 fund=+59 price=$nan
 2026-08-04T08:20:18.655610+00:00,SKIP(exposure),VRT,score=+32,tech=-36 fund=+77 price=$nan
+2026-08-05T08:16:49.911542+00:00,HOLD,AAPL,score=+18 pnl=+0.6%,tech=-50 fund=+64 price=$309.38
+2026-08-05T08:16:50.340185+00:00,HOLD,ADBE,score=+60 pnl=+5.3%,tech=+55 fund=+64 price=$257.49
+2026-08-05T08:16:50.727055+00:00,HOLD,AMZN,score=+71 pnl=+14.4%,tech=+68 fund=+73 price=$277.42
+2026-08-05T08:16:51.218853+00:00,HOLD,JPM,score=+47 pnl=+5.1%,tech=+36 fund=+55 price=$357.52
+2026-08-05T08:16:51.744174+00:00,HOLD,MSFT,score=+64 pnl=+27.6%,tech=+50 fund=+73 price=$492.81
+2026-08-05T08:16:52.175754+00:00,HOLD,NVDA,score=+66 pnl=+7.3%,tech=+36 fund=+86 price=$211.94
+2026-08-05T08:16:52.609227+00:00,HOLD,V,score=+52 pnl=+4.1%,tech=+55 fund=+50 price=$369.59
+2026-08-05T08:16:53.192079+00:00,HOLD,XOM,score=+57 pnl=+8.3%,tech=+55 fund=+59 price=$153.96
+2026-08-05T08:16:53.192298+00:00,UNIVERSE,-,ai-thematic,AI主题股池 2026-07-26（10天前生成，30只）@ universe_ai.json
+2026-08-05T08:17:06.247494+00:00,SKIP(exposure),EOG,score=+74,tech=+55 fund=+86 price=$143.52
+2026-08-05T08:17:06.247606+00:00,SKIP(exposure),LRCX,score=+61,tech=+23 fund=+86 price=$317.74
+2026-08-05T08:17:06.247647+00:00,SKIP(exposure),AVGO,score=+61,tech=+36 fund=+77 price=$418.16
+2026-08-05T08:17:06.247696+00:00,SKIP(exposure),PWR,score=+58,tech=+50 fund=+64 price=$693.00
+2026-08-05T08:17:06.247728+00:00,SKIP(exposure),ETN,score=+58,tech=+50 fund=+64 price=$444.77
+2026-08-05T08:17:06.247758+00:00,SKIP(exposure),EME,score=+55,tech=+50 fund=+59 price=$819.88
+2026-08-05T08:17:06.247787+00:00,SKIP(exposure),CIEN,score=+49,tech=+27 fund=+64 price=$411.13
+2026-08-05T08:17:06.247817+00:00,SKIP(exposure),AMAT,score=+47,tech=+9 fund=+73 price=$546.62
+2026-08-05T08:17:06.247846+00:00,SKIP(exposure),BAC,score=+47,tech=+36 fund=+55 price=$62.90
+2026-08-05T08:17:06.247875+00:00,SKIP(exposure),MPC,score=+45,tech=+36 fund=+50 price=$312.61
+2026-08-05T08:17:06.247904+00:00,SKIP(exposure),CVX,score=+44,tech=+55 fund=+36 price=$190.40
+2026-08-05T08:17:06.247934+00:00,SKIP(exposure),WFC,score=+39,tech=+36 fund=+41 price=$88.39
+2026-08-05T08:17:06.247962+00:00,SKIP(exposure),AMD,score=+39,tech=+9 fund=+59 price=$518.58
+2026-08-05T08:17:06.247992+00:00,SKIP(exposure),SLB,score=+34,tech=+36 fund=+32 price=$50.81
+2026-08-05T08:17:06.248020+00:00,SKIP(exposure),VRT,score=+34,tech=-32 fund=+77 price=$269.93
+2026-08-05T08:17:06.248049+00:00,SKIP(exposure),MU,score=+34,tech=-45 fund=+86 price=$892.67
+2026-08-05T08:17:06.248078+00:00,SKIP(exposure),GEV,score=+33,tech=-27 fund=+73 price=$1018.53
+2026-08-05T08:17:06.248108+00:00,SKIP(exposure),MS,score=+30,tech=+27 fund=+32 price=$217.04
+2026-08-05T08:17:06.248137+00:00,SKIP(exposure),CEG,score=+30,tech=+27 fund=+32 price=$267.25
