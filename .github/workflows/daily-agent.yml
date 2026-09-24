@@ -35,6 +35,13 @@ jobs:
             && echo "已恢复 $(wc -l < decisions_log.csv) 行历史" \
             || echo "仓库中暂无历史日志，从空白开始"
 
+      # 数据层的静默污染（如盘前 NaN 尾行把多头信号翻成空头）不会报错，
+      # 只会让打分悄悄跑偏。放在下单之前跑，坏数据宁可不交易。
+      - name: 单元测试（数据清洗与信号）
+        run: |
+          pip install pytest
+          python -m pytest tests/ -q
+
       - name: 运行Agent决策循环
         env:
           ALPACA_API_KEY: ${{ secrets.ALPACA_API_KEY }}

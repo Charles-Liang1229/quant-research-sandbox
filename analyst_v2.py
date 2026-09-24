@@ -31,6 +31,16 @@ def fetch_all(symbol: str):
     raw.columns = raw.columns.get_level_values(0)
     price_df = raw[["Open", "High", "Low", "Close", "Volume"]].copy()
     price_df.columns = ["open", "high", "low", "close", "volume"]
+
+    # 盘前取数时 yfinance 会多给一根"今天"的全 NaN 行。每个技术信号都读
+    # .iloc[-1]，而 NaN 参与任何比较都返回 False，于是 t_trend 的两个
+    # if 全不成立、直落到 else 分支——无条件判为"弱空"，不报错、不告警。
+    # 本 agent 的云端任务跑在 06:28 ET（开盘前），所以这条每天都在发生：
+    # NVDA 的技术分被从 +55 压到 0，综合分凭空少 22 分，而买入门槛是 30。
+    price_df = price_df.dropna(subset=["close"])
+    if price_df.empty:
+        raise ValueError(f"{symbol}: 无有效价格数据")
+
     info = tk.info   # 基本面快照（PE、利润率、增长等）
     return price_df.astype(float), info
 
