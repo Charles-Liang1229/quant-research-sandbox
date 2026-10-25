@@ -35,6 +35,27 @@ jobs:
             && echo "已恢复 $(wc -l < decisions_log.csv) 行历史" \
             || echo "仓库中暂无历史日志，从空白开始"
 
+      # AI 主题股池由私有仓库 autotrader 每周日生成，这里拉最新版覆盖快照。
+      # 令牌缺失或拉取失败时沿用旧快照（超过 21 天自动降级到成交额筛选），不阻断交易。
+      - name: 拉取 autotrader 最新 AI 股池
+        continue-on-error: true
+        uses: actions/checkout@v4
+        with:
+          repository: Charles-Liang1229/autotrader
+          token: ${{ secrets.AUTOTRADER_READ_TOKEN }}
+          path: _autotrader
+          sparse-checkout: research/universe.json
+          sparse-checkout-cone-mode: false
+
+      - name: 更新股池快照
+        run: |
+          if [ -f _autotrader/research/universe.json ]; then
+            cp _autotrader/research/universe.json universe_ai.json
+            echo "已同步 AI 股池（生成于 $(python -c 'import json;print(json.load(open("universe_ai.json"))["generated_at"])')）"
+          else
+            echo "::warning::未能拉取 autotrader 股池，沿用仓库内旧快照"
+          fi
+
       # 数据层的静默污染（如盘前 NaN 尾行把多头信号翻成空头）不会报错，
       # 只会让打分悄悄跑偏。放在下单之前跑，坏数据宁可不交易。
       - name: 单元测试（数据清洗与信号）
@@ -58,7 +79,7 @@ jobs:
         run: |
           git config user.name "trading-agent-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add -f decisions_log.csv
+          git add -f decisions_log.csv universe_ai.json
           git diff --cached --quiet && echo "无新决策，跳过提交" && exit 0
           git commit -m "log: agent decisions $(date -u +%Y-%m-%d)"
           # 别的运行可能刚推过；rebase 后重试，避免非快进被拒后静默丢日志
