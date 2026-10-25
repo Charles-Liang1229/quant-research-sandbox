@@ -183,15 +183,19 @@ def build_universe(trading_client: TradingClient) -> list[str]:
             pass
 
     print("   拉取全市场资产列表 ...")
-    assets = trading_client.get_all_assets(GetAssetsRequest(
-        status=AssetStatus.ACTIVE, asset_class=AssetClass.US_EQUITY))
+    # 取原始 JSON 而不用 get_all_assets()：2026-10-20 起 Alpaca 资产表出现
+    # 新交易所 TXSE（德州证交所），alpaca-py 的枚举不认识它，整表校验失败，
+    # 每日任务直接崩溃。我们只用到下面几个字段，不需要 SDK 的类型校验。
+    params = GetAssetsRequest(
+        status=AssetStatus.ACTIVE, asset_class=AssetClass.US_EQUITY).to_request_fields()
+    assets = trading_client.get("/assets", params)
     # 排除ETF/基金：打分逻辑依赖个股基本面（PE/利润率/增长），
     # ETF没有这些数据，只会白占股池名额。Alpaca无ETF标志位，按名称关键词过滤。
     ETF_WORDS = ("ETF", "ETN", "FUND", "TRUST", "SHARES", "INDEX", "BULL", "BEAR")
-    symbols = [a.symbol for a in assets
-               if a.tradable and a.fractionable
-               and a.symbol.isalpha() and len(a.symbol) <= 5
-               and not any(w in (a.name or "").upper() for w in ETF_WORDS)]
+    symbols = [a["symbol"] for a in assets
+               if a.get("tradable") and a.get("fractionable")
+               and a["symbol"].isalpha() and len(a["symbol"]) <= 5
+               and not any(w in (a.get("name") or "").upper() for w in ETF_WORDS)]
     print(f"   可交易+支持碎股的普通股（已排除ETF）：{len(symbols)}只，按成交额排序中 ...")
 
     data_client = StockHistoricalDataClient(
