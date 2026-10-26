@@ -1,9 +1,9 @@
 {
-  "market_regime": "Late-cycle, sticky-inflation regime: CPI at a 3-year high, oil up ~10% on war/Hormuz risk, 10Y near 5%, and the Fed expected to hike again in December rather than cut. Leadership has rotated hard into defensives and energy while Technology and Communication momentum rolls over amid renewed AI-capex 'gut check' anxiety and a VIX up 24% on the month.",
+  "market_regime": "Inflationary, higher-for-longer regime: an Iran/war-driven oil spike has pushed WTI to ~$103 and the 10Y near 5%, with the Fed holding then expected to hike again into December rather than cut. Capital is rotating hard out of long-duration tech/communications (QQQ -5% 1m, AI capex 'gut check' fears) into energy, utilities, staples, healthcare and financials — a classic defensive/reflation tilt with VIX rising.",
   "themes": [
     {
-      "name": "Energy & oil-levered inflation beneficiaries",
-      "thesis": "Energy is the top sector on both 1m (+10.8%) and 3m (+21.2%), driven by WTI +9-10% on war-related supply risk (Strait of Hormuz chatter) and persistent inflation. With the Fed leaning hawkish on energy-driven inflation, integrated producers, E&Ps and services carry the strongest trend in the tape.",
+      "name": "Energy supply shock",
+      "thesis": "Energy is the clear momentum leader (+10.8% 1m / +19.7% 3m) on an Iran-war oil spike (WTI $103, +9% 1m) and war-related inflation keeping crude bid; post-midterm permitting-reform headlines add a policy tailwind for US production and infrastructure.",
       "confidence": "high",
       "tickers": [
         "XLE",
@@ -12,112 +12,108 @@
         "COP",
         "EOG",
         "SLB",
-        "OXY",
-        "WMB"
+        "PSX",
+        "MPC"
       ]
     },
     {
-      "name": "Defensive consumer staples",
-      "thesis": "Classic late-cycle rotation: Staples +8.0%/1m and +9.3%/3m as recession-risk questions dominate advisor conversations and Goldman flags defensive names for a slowing economy. Stable cash flows and pricing power hold up as discretionary/tech leadership fades.",
-      "confidence": "high",
-      "tickers": [
-        "XLP",
-        "PG",
-        "KO",
-        "PEP",
-        "WMT",
-        "COST",
-        "MO",
-        "CL"
-      ]
-    },
-    {
-      "name": "Health care leadership",
-      "thesis": "Health Care is the 3m leader at +23.5% and +5.5% on the month, combining defensive earnings with its own momentum as capital exits high-multiple tech. Large-cap pharma and managed care offer durable demand independent of the rate cycle.",
-      "confidence": "high",
-      "tickers": [
-        "XLV",
-        "LLY",
-        "UNH",
-        "JNJ",
-        "ABBV",
-        "MRK",
-        "ISRG"
-      ]
-    },
-    {
-      "name": "Utilities & power for AI/electrification",
-      "thesis": "Utilities +8.1%/1m reflect both defensive rotation and a structural power-demand story: semiconductor industry electricity use hit a record and AI data-center capex remains enormous even as equity enthusiasm wobbles. Regulated utilities and independent power producers monetize the grid/power bottleneck with less direct AI-valuation risk.",
+      "name": "Electric power & utilities",
+      "thesis": "Utilities are rallying (+8.1% 1m) as a defensive bid meets structural AI/data-center electricity demand (semiconductor industry power use at record highs); regulated and merchant power names benefit from load growth while bond-proxy demand returns despite high yields.",
       "confidence": "medium",
       "tickers": [
         "XLU",
         "NEE",
-        "DUK",
         "SO",
+        "DUK",
+        "AEP",
         "CEG",
         "VST",
-        "GEV"
+        "D"
+      ]
+    },
+    {
+      "name": "Defensive healthcare & staples",
+      "thesis": "Health Care (+22.5% 3m) and Consumer Staples (+8.0% 1m) lead the defensive rotation as growth fears and sticky 3-year-high inflation push investors toward earnings stability and pricing power away from AI megacaps.",
+      "confidence": "medium",
+      "tickers": [
+        "XLV",
+        "UNH",
+        "LLY",
+        "ABBV",
+        "MRK",
+        "PG",
+        "KO",
+        "COST"
+      ]
+    },
+    {
+      "name": "Higher-for-longer financials",
+      "thesis": "Financials are quietly strong (+10.7% 3m) as the Fed skips cuts and is expected to hike again, steepening net-interest margins; large banks and insurers benefit from elevated rates and a firm dollar (DXY +2.3% 3m).",
+      "confidence": "medium",
+      "tickers": [
+        "XLF",
+        "JPM",
+        "BAC",
+        "WFC",
+        "GS",
+        "MS"
       ]
     }
   ],
   "avoid": [
     {
-      "what": "Mega-cap technology and communication services (QQQ, high-multiple AI/software)",
-      "reason": "Worst sectors: Tech -5.9%/1m, Comm -7.4%/1m, with renewed AI-capex 'gut check' fears, hyperscaler debt warnings, and CoreWeave stress. Momentum is firmly negative and valuations are rate-sensitive into a hawkish Fed."
+      "what": "Megacap tech / AI-capex beneficiaries (NVDA, META, AMZN-style hyperscalers and neoclouds like CRWV)",
+      "reason": "Nasdaq leadership is rolling over (QQQ -5% 1m) on an AI-capex 'gut check,' rising hyperscaler debt warnings, and slowing-growth fears — trend has turned against long-duration AI names."
     },
     {
-      "what": "Long-duration bond proxies and rate-sensitive REITs",
-      "reason": "10Y near 5% and a December hike expected; the Fed cut has been pushed to late 2026, pressuring long-duration and leveraged real estate."
+      "what": "Communication services",
+      "reason": "Worst-performing sector (-7.4% 1m / -5.3% 3m) as ad-exposed, long-duration growth names de-rate under higher yields."
     },
     {
-      "what": "Gold and precious-metals exposure",
-      "reason": "Gold is down -6.8%/1m and -11.3%/3m despite inflation, showing a broken near-term trend as real yields and the dollar firm."
+      "what": "Gold and precious-metals miners",
+      "reason": "Gold is falling hard (-6.8% 1m / -10.3% 3m) despite high inflation, pressured by a stronger dollar and rising real yields — momentum is negative."
     },
     {
-      "what": "Humanoid robotics / China-exposed automation names",
-      "reason": "Washington's robot curbs could cut US humanoid robotics revenue by ~58% via lost China access; hype-cycle risk and policy headwinds make the theme untradeable on fundamentals right now."
-    },
-    {
-      "what": "Industrials",
-      "reason": "Industrials are lagging (-2.5%/1m, -5.0%/3m) amid tariff disruption and slowing-growth signals, with no positive momentum confirmation."
+      "what": "Long-duration bond proxies and rate-sensitive growth / unprofitable small caps",
+      "reason": "10Y near 5% with the Fed expected to hike again into 2026 penalizes duration and speculative balance sheets."
     }
   ],
   "all_tickers": [
     "ABBV",
+    "AEP",
+    "BAC",
     "CEG",
-    "CL",
     "COP",
     "COST",
     "CVX",
+    "D",
     "DUK",
     "EOG",
-    "GEV",
-    "ISRG",
-    "JNJ",
+    "GS",
+    "JPM",
     "KO",
     "LLY",
-    "MO",
+    "MPC",
     "MRK",
+    "MS",
     "NEE",
-    "OXY",
-    "PEP",
     "PG",
+    "PSX",
     "SLB",
     "SO",
     "UNH",
     "VST",
-    "WMB",
-    "WMT",
+    "WFC",
     "XLE",
-    "XLP",
+    "XLF",
     "XLU",
     "XLV",
     "XOM"
   ],
-  "generated_at": "2026-10-25",
+  "generated_at": "2026-10-26",
   "model": "claude-opus-4-8",
   "usage": {
-    "input_tokens": 4612,
-    "output_tokens": 2240
+    "input_tokens": 4614,
+    "output_tokens": 2364
   }
 }
