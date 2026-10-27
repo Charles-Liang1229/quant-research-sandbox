@@ -3331,3 +3331,25 @@ timestamp,action,symbol,reason,detail
 2026-10-26T11:51:54.379878+00:00,SKIP(exposure),COST,score=+41,tech=+55 fund=+32 price=$1003.32
 2026-10-26T11:51:54.379902+00:00,SKIP(exposure),SLB,score=+36,tech=+36 fund=+36 price=$53.06
 2026-10-26T11:51:54.379925+00:00,SKIP(exposure),MRK,score=+33,tech=+27 fund=+36 price=$145.27
+2026-10-27T11:15:42.918447+00:00,HOLD,AAPL,score=+60 pnl=+11.0%,tech=+55 fund=+64 price=$343.91
+2026-10-27T11:15:43.383483+00:00,HOLD,ADBE,score=+53 pnl=+4.8%,tech=+36 fund=+64 price=$258.62
+2026-10-27T11:15:43.857202+00:00,HOLD,AMZN,score=+22 pnl=+2.9%,tech=-55 fund=+73 price=$249.09
+2026-10-27T11:15:44.381126+00:00,HOLD,JPM,score=+44 pnl=-1.5%,tech=+27 fund=+55 price=$334.04
+2026-10-27T11:15:44.885541+00:00,HOLD,MSFT,score=+58 pnl=+37.5%,tech=+36 fund=+73 price=$532.60
+2026-10-27T11:15:45.424533+00:00,HOLD,NVDA,score=+37 pnl=+7.7%,tech=-36 fund=+86 price=$216.00
+2026-10-27T11:15:45.929987+00:00,HOLD,V,score=+52 pnl=+13.4%,tech=+55 fund=+50 price=$404.16
+2026-10-27T11:15:46.492054+00:00,HOLD,XOM,score=+50 pnl=+28.4%,tech=+36 fund=+59 price=$184.54
+2026-10-27T11:15:46.492264+00:00,UNIVERSE,-,ai-thematic,AI主题股池 2026-10-26（1天前生成，30只）@ universe_ai.json
+2026-10-27T11:16:02.081936+00:00,SKIP(exposure),EOG,score=+66,tech=+36 fund=+86 price=$163.68
+2026-10-27T11:16:02.082041+00:00,SKIP(exposure),LLY,score=+63,tech=+55 fund=+68 price=$1279.14
+2026-10-27T11:16:02.082085+00:00,SKIP(exposure),PSX,score=+53,tech=+36 fund=+64 price=$288.85
+2026-10-27T11:16:02.082125+00:00,SKIP(exposure),MPC,score=+53,tech=+36 fund=+64 price=$470.64
+2026-10-27T11:16:02.082162+00:00,SKIP(exposure),KO,score=+52,tech=+55 fund=+50 price=$92.70
+2026-10-27T11:16:02.082198+00:00,SKIP(exposure),CVX,score=+50,tech=+36 fund=+59 price=$232.01
+2026-10-27T11:16:02.082234+00:00,SKIP(exposure),PG,score=+49,tech=+68 fund=+36 price=$159.92
+2026-10-27T11:16:02.082269+00:00,SKIP(exposure),UNH,score=+44,tech=+55 fund=+36 price=$410.70
+2026-10-27T11:16:02.082304+00:00,SKIP(exposure),ABBV,score=+44,tech=+55 fund=+36 price=$286.74
+2026-10-27T11:16:02.082339+00:00,SKIP(exposure),GS,score=+43,tech=+18 fund=+59 price=$893.28
+2026-10-27T11:16:02.082375+00:00,SKIP(exposure),COP,score=+42,tech=+36 fund=+45 price=$151.37
+2026-10-27T11:16:02.082410+00:00,SKIP(exposure),COST,score=+41,tech=+55 fund=+32 price=$1005.16
+2026-10-27T11:16:02.082445+00:00,SKIP(exposure),SLB,score=+36,tech=+36 fund=+36 price=$53.08
