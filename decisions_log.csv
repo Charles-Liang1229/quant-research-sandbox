@@ -3515,3 +3515,19 @@ timestamp,action,symbol,reason,detail
 2026-11-06T13:26:45.897511+00:00,SKIP(exposure),MU,score=+32,tech=-50 fund=+86 price=$656.39
 2026-11-06T13:26:45.897528+00:00,SKIP(exposure),LRCX,score=+32,tech=-50 fund=+86 price=$185.20
 2026-11-06T13:26:45.897545+00:00,SKIP(exposure),EOG,score=+32,tech=-50 fund=+86 price=$144.89
+2026-11-09T14:41:00.617491+00:00,HOLD,AAPL,score=+45 pnl=+13.3%,tech=+36 fund=+50 price=$350.06
+2026-11-09T14:41:01.607015+00:00,HOLD,ADBE,score=+16 pnl=-1.9%,tech=-55 fund=+64 price=$238.26
+2026-11-09T14:41:02.685095+00:00,HOLD,AMZN,score=+46 pnl=+12.8%,tech=+55 fund=+41 price=$273.91
+2026-11-09T14:41:03.912093+00:00,HOLD,JPM,score=+22 pnl=-1.3%,tech=-27 fund=+55 price=$336.57
+2026-11-09T14:41:04.870231+00:00,HOLD,MSFT,score=+65 pnl=+41.1%,tech=+55 fund=+73 price=$543.16
+2026-11-09T14:41:04.923698+00:00,SELL(stop),NVDA,止损:-13.2%,entry=202.006742 now=175.36
+2026-11-09T14:41:06.074649+00:00,HOLD,V,score=+52 pnl=+18.2%,tech=+55 fund=+50 price=$420.11
+2026-11-09T14:41:06.937364+00:00,HOLD,XOM,score=+21 pnl=+15.0%,tech=-36 fund=+59 price=$164.12
+2026-11-09T14:41:06.937556+00:00,UNIVERSE,-,ai-thematic,AI主题股池 2026-11-02（7天前生成，30只）@ universe_ai.json
+2026-11-09T14:41:36.288748+00:00,SKIP(exposure),LLY,score=+68,tech=+55 fund=+77 price=$1384.00
+2026-11-09T14:41:36.288839+00:00,SKIP(exposure),KO,score=+52,tech=+55 fund=+50 price=$95.21
+2026-11-09T14:41:36.288880+00:00,SKIP(exposure),ABBV,score=+45,tech=+36 fund=+50 price=$291.23
+2026-11-09T14:41:36.288907+00:00,SKIP(exposure),PG,score=+44,tech=+55 fund=+36 price=$166.06
+2026-11-09T14:41:36.288932+00:00,SKIP(exposure),COST,score=+41,tech=+55 fund=+32 price=$1049.37
+2026-11-09T14:41:36.288955+00:00,SKIP(exposure),COP,score=+37,tech=-36 fund=+86 price=$134.12
+2026-11-09T14:41:36.288978+00:00,SKIP(exposure),EOG,score=+32,tech=-50 fund=+86 price=$146.46
