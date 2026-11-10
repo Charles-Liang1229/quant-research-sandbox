@@ -3531,3 +3531,20 @@ timestamp,action,symbol,reason,detail
 2026-11-09T14:41:36.288932+00:00,SKIP(exposure),COST,score=+41,tech=+55 fund=+32 price=$1049.37
 2026-11-09T14:41:36.288955+00:00,SKIP(exposure),COP,score=+37,tech=-36 fund=+86 price=$134.12
 2026-11-09T14:41:36.288978+00:00,SKIP(exposure),EOG,score=+32,tech=-50 fund=+86 price=$146.46
+2026-11-10T13:56:59.150754+00:00,HOLD,AAPL,score=+50 pnl=+14.0%,tech=+50 fund=+50 price=$350.69
+2026-11-10T13:56:59.840763+00:00,HOLD,ADBE,score=+16 pnl=-2.6%,tech=-55 fund=+64 price=$237.32
+2026-11-10T13:57:00.477594+00:00,HOLD,AMZN,score=+52 pnl=+9.4%,tech=+68 fund=+41 price=$266.93
+2026-11-10T13:57:01.310466+00:00,HOLD,JPM,score=+44 pnl=+0.7%,tech=+27 fund=+55 price=$342.08
+2026-11-10T13:57:02.272675+00:00,HOLD,MSFT,score=+71 pnl=+41.0%,tech=+68 fund=+73 price=$545.18
+2026-11-10T13:57:02.920127+00:00,HOLD,V,score=+46 pnl=+19.5%,tech=+41 fund=+50 price=$422.16
+2026-11-10T13:57:03.640541+00:00,HOLD,XOM,score=+15 pnl=+14.1%,tech=-50 fund=+59 price=$164.73
+2026-11-10T13:57:03.640733+00:00,UNIVERSE,-,ai-thematic,AI主题股池 2026-11-02（8天前生成，30只）@ universe_ai.json
+2026-11-10T13:57:23.998217+00:00,BUY,LLY,"score=+74 size=$10,568",tech=+68 fund=+77 price=$1411.95
+2026-11-10T13:57:23.998298+00:00,SKIP(exposure),KO,score=+52,tech=+55 fund=+50 price=$96.03
+2026-11-10T13:57:23.998320+00:00,SKIP(exposure),ABBV,score=+45,tech=+36 fund=+50 price=$293.30
+2026-11-10T13:57:23.998339+00:00,SKIP(exposure),PG,score=+44,tech=+55 fund=+36 price=$168.32
+2026-11-10T13:57:23.998356+00:00,SKIP(exposure),COST,score=+41,tech=+55 fund=+32 price=$1066.18
+2026-11-10T13:57:23.998374+00:00,SKIP(exposure),CEG,score=+39,tech=+50 fund=+32 price=$276.09
+2026-11-10T13:57:23.998392+00:00,SKIP(exposure),D,score=+33,tech=+68 fund=+9 price=$68.24
+2026-11-10T13:57:23.998414+00:00,SKIP(exposure),EOG,score=+32,tech=-50 fund=+86 price=$148.43
+2026-11-10T13:57:23.998438+00:00,SKIP(exposure),COP,score=+32,tech=-50 fund=+86 price=$134.47
