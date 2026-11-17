@@ -3627,3 +3627,22 @@ timestamp,action,symbol,reason,detail
 2026-11-16T14:17:31.841124+00:00,SKIP(exposure),COST,score=+34,tech=+36 fund=+32 price=$1106.21
 2026-11-16T14:17:31.841160+00:00,SKIP(exposure),CEG,score=+34,tech=+36 fund=+32 price=$280.20
 2026-11-16T14:17:31.841195+00:00,SKIP(exposure),KLAC,score=+32,tech=-36 fund=+77 price=$152.32
+2026-11-17T15:09:06.609497+00:00,HOLD,AAPL,score=+52 pnl=+14.8%,tech=+55 fund=+50 price=$354.66
+2026-11-17T15:09:07.708609+00:00,HOLD,ADBE,score=+24 pnl=-2.4%,tech=-36 fund=+64 price=$237.32
+2026-11-17T15:09:08.726134+00:00,HOLD,AMZN,score=+43 pnl=+6.7%,tech=+45 fund=+41 price=$258.92
+2026-11-17T15:09:09.700059+00:00,HOLD,JPM,score=+22 pnl=-1.8%,tech=-27 fund=+55 price=$334.94
+2026-11-17T15:09:10.764761+00:00,HOLD,LLY,score=+68 pnl=+1.4%,tech=+55 fund=+77 price=$1429.02
+2026-11-17T15:09:11.856995+00:00,HOLD,MSFT,score=+29 pnl=+32.7%,tech=-36 fund=+73 price=$511.18
+2026-11-17T15:09:12.941679+00:00,HOLD,V,score=+45 pnl=+19.1%,tech=+36 fund=+50 price=$423.45
+2026-11-17T15:09:14.154988+00:00,HOLD,XOM,score=+25 pnl=+18.0%,tech=-27 fund=+59 price=$168.43
+2026-11-17T15:09:14.155189+00:00,UNIVERSE,-,ai-thematic,AI主题股池 2026-11-02（15天前生成，30只）@ universe_ai.json
+2026-11-17T15:09:45.767115+00:00,SKIP(exposure),EOG,score=+63,tech=+27 fund=+86 price=$156.71
+2026-11-17T15:09:45.767188+00:00,SKIP(exposure),KO,score=+45,tech=+36 fund=+50 price=$99.29
+2026-11-17T15:09:45.767217+00:00,SKIP(exposure),ABBV,score=+45,tech=+36 fund=+50 price=$292.39
+2026-11-17T15:09:45.767242+00:00,SKIP(exposure),LRCX,score=+37,tech=-36 fund=+86 price=$210.63
+2026-11-17T15:09:45.767266+00:00,SKIP(exposure),AMAT,score=+37,tech=-36 fund=+86 price=$351.38
+2026-11-17T15:09:45.767288+00:00,SKIP(exposure),PG,score=+36,tech=+36 fund=+36 price=$172.73
+2026-11-17T15:09:45.767311+00:00,SKIP(exposure),COST,score=+34,tech=+36 fund=+32 price=$1119.05
+2026-11-17T15:09:45.767334+00:00,SKIP(exposure),COP,score=+33,tech=-27 fund=+73 price=$142.37
+2026-11-17T15:09:45.767356+00:00,SKIP(exposure),KLAC,score=+32,tech=-36 fund=+77 price=$143.50
+2026-11-17T15:09:45.767379+00:00,SKIP(exposure),CEG,score=+30,tech=+27 fund=+32 price=$274.18
