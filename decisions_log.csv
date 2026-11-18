@@ -3646,3 +3646,21 @@ timestamp,action,symbol,reason,detail
 2026-11-17T15:09:45.767334+00:00,SKIP(exposure),COP,score=+33,tech=-27 fund=+73 price=$142.37
 2026-11-17T15:09:45.767356+00:00,SKIP(exposure),KLAC,score=+32,tech=-36 fund=+77 price=$143.50
 2026-11-17T15:09:45.767379+00:00,SKIP(exposure),CEG,score=+30,tech=+27 fund=+32 price=$274.18
+2026-11-18T14:47:19.139380+00:00,HOLD,AAPL,score=+52 pnl=+14.7%,tech=+55 fund=+50 price=$354.54
+2026-11-18T14:47:19.706966+00:00,HOLD,ADBE,score=+24 pnl=-5.2%,tech=-36 fund=+64 price=$230.45
+2026-11-18T14:47:20.157648+00:00,HOLD,AMZN,score=+43 pnl=+8.0%,tech=+45 fund=+41 price=$262.20
+2026-11-18T14:47:20.817332+00:00,HOLD,JPM,score=+18 pnl=-3.5%,tech=-36 fund=+55 price=$329.01
+2026-11-18T14:47:21.437457+00:00,HOLD,LLY,score=+61 pnl=+0.3%,tech=+36 fund=+77 price=$1412.08
+2026-11-18T14:47:21.995209+00:00,HOLD,MSFT,score=+29 pnl=+30.6%,tech=-36 fund=+73 price=$503.12
+2026-11-18T14:47:22.538486+00:00,HOLD,V,score=+19 pnl=+17.0%,tech=-27 fund=+50 price=$415.79
+2026-11-18T14:47:23.141742+00:00,HOLD,XOM,score=+21 pnl=+13.9%,tech=-36 fund=+59 price=$162.52
+2026-11-18T14:47:23.141976+00:00,UNIVERSE,-,ai-thematic,AI主题股池 2026-11-02（16天前生成，30只）@ universe_ai.json
+2026-11-18T14:47:39.456496+00:00,SKIP(exposure),KO,score=+52,tech=+55 fund=+50 price=$98.16
+2026-11-18T14:47:39.456602+00:00,SKIP(exposure),PG,score=+44,tech=+55 fund=+36 price=$171.07
+2026-11-18T14:47:39.456724+00:00,SKIP(exposure),EOG,score=+41,tech=-27 fund=+86 price=$151.07
+2026-11-18T14:47:39.456802+00:00,SKIP(exposure),LRCX,score=+37,tech=-36 fund=+86 price=$208.60
+2026-11-18T14:47:39.456899+00:00,SKIP(exposure),COP,score=+37,tech=-36 fund=+86 price=$135.88
+2026-11-18T14:47:39.456940+00:00,SKIP(exposure),AMAT,score=+37,tech=-36 fund=+86 price=$345.41
+2026-11-18T14:47:39.456977+00:00,SKIP(exposure),COST,score=+34,tech=+36 fund=+32 price=$1101.84
+2026-11-18T14:47:39.457013+00:00,SKIP(exposure),KLAC,score=+32,tech=-36 fund=+77 price=$143.60
+2026-11-18T14:47:39.457049+00:00,SKIP(exposure),CEG,score=+30,tech=+27 fund=+32 price=$263.64
